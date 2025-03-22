@@ -35,7 +35,7 @@ def main():
             operation = input("Введите номер операции: ")
             n1 = int(input("Введите первое число: "))
             n2 = int(input("Введите второе число: "))
-            bits = 8  # Используем 8-битные вычисления по умолчанию
+            bits = 8
 
             if operation == "1":
                 result_bin, result_dec = BinaryOperations.add_complement(n1, n2, bits)

@@ -3,7 +3,6 @@ from constans import BITS_DEFAULT
 class BinaryConverter:
     @staticmethod
     def dec_to_bin(n, bits=BITS_DEFAULT):
-        """Перевод числа в двоичный формат (прямой, обратный, дополнительный коды) без bin()."""
         min_val = -(2 ** (bits - 1))
         max_val = 2 ** (bits - 1) - 1
 
@@ -25,7 +24,6 @@ class BinaryConverter:
 
     @staticmethod
     def int_to_binary(n, bits):
-        """Перевод положительного числа в двоичный формат."""
         binary_str = ''
         for _ in range(bits):
             binary_str = str(n % 2) + binary_str
@@ -35,7 +33,6 @@ class BinaryConverter:
 
     @staticmethod
     def add_one(binary_str):
-        """Прибавляем 1 к двоичному числу (дополнительный код)."""
         binary_list = list(binary_str)
         carry = 1
 
@@ -51,7 +48,6 @@ class BinaryConverter:
 
     @staticmethod
     def bin_to_dec(binary_str):
-        """Перевод двоичного числа с дробной частью в десятичное."""
         if '.' in binary_str:
             int_part, frac_part = binary_str.split('.')
         else:

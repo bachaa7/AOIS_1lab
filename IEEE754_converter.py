@@ -4,17 +4,14 @@ from constans import IEEE754_TOTAL_BITS, IEEE754_EXPONENT_BITS, IEEE754_MANTISSA
 class IEEE754Converter:
     @staticmethod
     def float_to_ieee754(num):
-        """Преобразование числа с плавающей запятой в формат IEEE-754 (32 бита)."""
         return format(struct.unpack('!I', struct.pack('!f', num))[0], f'0{IEEE754_TOTAL_BITS}b')
 
     @staticmethod
     def ieee754_to_float(ieee_binary):
-        """Преобразование 32-битного двоичного представления IEEE-754 обратно в число."""
         return struct.unpack('!f', struct.pack('!I', int(ieee_binary, 2)))[0]
 
     @staticmethod
     def sum_floats_ieee754(first_float, second_float):
-        """Сложение двух чисел IEEE-754 (32 бита)."""
         first_binary = IEEE754Converter.float_to_ieee754(first_float)
         second_binary = IEEE754Converter.float_to_ieee754(second_float)
 
